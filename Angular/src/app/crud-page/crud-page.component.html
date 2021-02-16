@@ -28,14 +28,14 @@
           <div class="row">
             <div *ngFor="let usuario of Usuarios" class="col-4">
                <div class="card bg-light mb-3" style="max-width: 18rem;">
-                     <div class="card-header">{{usuario.nombre}} {{usuario.apellidos}}</div>
+                     <div class="card-header">{{usuario.nombre}}</div>
                      <div class="card-body">
                      <h6 class="card-title">Correo:{{usuario.correo}}</h6>
-                     <h6 class="card-title">Credito:{{usuario.credito}}</h6>
+                     <h6 class="card-title">Contraseña:{{usuario.contrasena}}</h6>
                      </div>
                      <div class="card-foot">
                         <button type="submit" class="btn btn-warning btn-block"
-                        (click)="getDatosUsuarios(usuario.id_user,usuario.rol,usuario.nombre,usuario.apellidos,usuario.correo,usuario.contrasena,usuario.telefono,usuario.direccion,usuario.fotografia,usuario.genero,usuario.estado,usuario.fecha_nac,usuario.credito,usuario.ganancia,usuario.particion,usuario.fecha_reg)">
+                        (click)="getDatosUsuarios(usuario.id_user,usuario.nombre,usuario.correo,usuario.contrasena)">
                          Editar Usuario
                         </button>
                         <button type="submit" class="btn btn-danger btn-block" (click)="deleteUser(usuario.id_user)">

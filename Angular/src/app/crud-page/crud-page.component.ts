@@ -16,6 +16,8 @@ export class CrudPageComponent implements OnInit {
   public contrasena: string;
   public correo: string;
 
+  Usuarios:Usuario[]=[];
+
   ngOnInit() {
   }
 
