@@ -1,1 +1,90 @@
-<p>crud-page works!</p>
+<app-topnavbar></app-topnavbar>
+
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-4">
+         <h1 style="color:mediumblue;">USUARIO</h1>        
+             <form>
+                <div class="form-group">
+                    <input type="text" name="nombre" [(ngModel)]="nombre"  class="form-control my-input" id="inputNombre" placeholder="Nombre">
+                 </div>
+                 <div class="form-group">
+                    <input type="text" name="correo" [(ngModel)]="correo" class="form-control my-input" id="inputEmail" placeholder="Correo">
+                 </div>
+                 <div class="form-group">
+                    <input type="text" name="contrasena" [(ngModel)]="contrasena" class="form-control my-input" id="inputContra" placeholder="Contraseña">
+                 </div>
+                  
+                 <!-- Boton de Registro-->
+                 <button type="submit" (click)="insertarUser()" class="btn btn-success btn-block">Agregar Usuario</button>
+                 <button type="submit" (click)="updateUser()" class="btn btn-warning btn-block">Actualizar Usuario</button>
+                 
+                 <br>
+                 <br>
+              </form>
+           
+      </div>
+      <div class="col-8">
+          <div class="row">
+            <div *ngFor="let usuario of Usuarios" class="col-4">
+               <div class="card bg-light mb-3" style="max-width: 18rem;">
+                     <div class="card-header">{{usuario.nombre}} {{usuario.apellidos}}</div>
+                     <div class="card-body">
+                     <h6 class="card-title">Correo:{{usuario.correo}}</h6>
+                     <h6 class="card-title">Credito:{{usuario.credito}}</h6>
+                     </div>
+                     <div class="card-foot">
+                        <button type="submit" class="btn btn-warning btn-block"
+                        (click)="getDatosUsuarios(usuario.id_user,usuario.rol,usuario.nombre,usuario.apellidos,usuario.correo,usuario.contrasena,usuario.telefono,usuario.direccion,usuario.fotografia,usuario.genero,usuario.estado,usuario.fecha_nac,usuario.credito,usuario.ganancia,usuario.particion,usuario.fecha_reg)">
+                         Editar Usuario
+                        </button>
+                        <button type="submit" class="btn btn-danger btn-block" (click)="deleteUser(usuario.id_user)">
+                              Eliminar Usuario
+                        </button>
+                     </div>
+               </div>
+         </div>
+         <div class="col-4">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+               <div class="card-header">Romario Pascual</div>
+               <div class="card-body">
+                  <h6 class="card-title">Correo: donroma@gmail.com</h6>
+                  <h6 class="card-title">Contraseña: aaaaaa</h6>
+               </div>
+               <div class="card-foot">
+                  <button type="submit" class="btn btn-warning btn-block"
+                     (click)="getDatosUsuarios(usuario.id_user,usuario.nombre,usuario.correo,usuario.contrasena)">
+                     Editar Usuario
+                  </button>
+                  <button type="submit" class="btn btn-danger btn-block" (click)="deleteUser(usuario.id_user)">
+                     Eliminar Usuario
+                  </button>
+               </div>
+            </div>
+      </div>
+             <div class="col-4">
+                   <div class="card bg-light mb-3" style="max-width: 18rem;">
+                     <div class="card-header">Kevin Duarte</div>
+                     <div class="card-body">
+                        <h6 class="card-title">Correo: kdchapin11@gmail.com</h6>
+                        <h6 class="card-title">Contraseña: asd123</h6>
+                     </div>
+                     <div class="card-foot">
+                        <button type="submit" class="btn btn-warning btn-block"
+                           (click)="getDatosUsuarios(usuario.id_user,usuario.rol,usuario.nombre,usuario.apellidos,usuario.correo,usuario.contrasena,usuario.telefono,usuario.direccion,usuario.fotografia,usuario.genero,usuario.estado,usuario.fecha_nac,usuario.credito,usuario.ganancia,usuario.particion,usuario.fecha_reg)">
+                           Editar Usuario
+                        </button>
+                        <button type="submit" class="btn btn-danger btn-block" (click)="deleteUser(usuario.id_user)">
+                           Eliminar Usuario
+                        </button>
+                     </div>
+                   </div>
+             </div>
+             
+          </div>
+      </div>
+  </div>
+  
+</div>
+
+
